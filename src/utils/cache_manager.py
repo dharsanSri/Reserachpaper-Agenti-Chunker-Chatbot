@@ -22,7 +22,7 @@ def _get_cache_path(pdf_name: str) -> Path:
     base = re.sub(r'[^a-z0-9_]', '', base)
     return CACHE_DIR / f"{base}.json"
 
-def get_chunk_plan_cache(pdf_name: str) -> Dict[str, Any] or None:
+def get_chunk_plan_cache(pdf_name: str) -> Dict[str, Any] | None:
     """
     Checks if a cached chunk plan exists and returns it as a dict, or None.
     """
