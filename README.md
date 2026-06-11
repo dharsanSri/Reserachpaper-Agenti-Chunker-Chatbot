@@ -88,7 +88,7 @@ sequenceDiagram
     participant DB as Qdrant Cluster
     participant LLM as Groq Llama-3.1
     
-    rect rgb(200, 220, 240)
+    rect rgba(59, 130, 246, 0.1)
     Note over User, Main: Ingestion & Indexing Pipeline (uv run src/main.py)
     Main->>Main: PDF Parser & logical structure scan
     Main->>LLM: Formulate chunk strategy per section (cached to disk)
@@ -98,7 +98,7 @@ sequenceDiagram
     Main->>DB: Connect & upsert vectors + metadata payload
     end
     
-    rect rgb(210, 240, 210)
+    rect rgba(16, 185, 129, 0.1)
     Note over User, DB: Retrieval & QA Pipeline (uv run src/main.py --query "...")
     User->>Main: Provide search query
     Main->>LLM: Expand into exactly 5 related queries (Agentic)
